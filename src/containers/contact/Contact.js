@@ -1,43 +1,47 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import Footer from '../footer/Footer';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './Contact.css'
 
 export default function Contact() {
+    const [nama, setNama] = useState('');
+    const [email, setEmail] = useState('');
+    const [pesan, setPesan] = useState('');
+    const [loading, setLoading] = useState(false);
 
-    const [alertContact, setAlertContact] = useState({ open: false, status: false, message: '' });
-    const [data, setData] = useState({
-        nama: '',
-        email: '',
-        pesan: ''
-    });
+    const handleAlert = async (e) => {
+        e.preventDefault();
 
-    const handleAlert = () => {
-        if (data.nama === '') {
-            setAlertContact({ open: true, status: false, message: 'nama tidak bolek kosong' });
-            setTimeout(() => {
-                setAlertContact({ open: false, status: false });
-            }, 1000);
-        } else if (data.email === '') {
-            setAlertContact({ open: true, status: false, message: 'email tidak bolek kosong' });
-            setTimeout(() => {
-                setAlertContact({ open: false, status: false });
-            }, 1000);
-        } else if (data.pesan === '') {
-            setAlertContact({ open: true, status: false, message: 'pesan tidak bolek kosong' });
-            setTimeout(() => {
-                setAlertContact({ open: false, status: false });
-            }, 1000);
-        } else {
-            setAlertContact({ open: true, status: true });
-            setTimeout(() => {
-                setAlertContact({ open: false, status: false });
-            }, 1000);
+        if (!nama || !email || !pesan) {
+            return toast.error('silahkan masukan data dengan benar !');
+        }
+
+        try {
+            setLoading(true)
+
+            const { data } = await axios.post('https://api-v1-portfolio.herokuapp.com/portfolio/send-email', {
+                email: email,
+                nama: nama,
+                pesan: pesan
+            });
+
+            setLoading(false);
+            toast.success(data.message);
+
+        } catch (error) {
+            setLoading(false);
+            toast.error(
+                error.response && error.response.data.message ? error.response.data.message : error.message
+            );
         }
     }
 
     return (
         <div className='contact-container' id='Contact'>
             <div className='contact-parent'>
+                <ToastContainer position='top-right' limit={1} />
                 <div className='contact-title'>
                     <h3>Contact</h3>
                     <div className='line'></div>
@@ -67,23 +71,22 @@ export default function Contact() {
                         </div>
                         <div className='col-lg-6'>
                             <div className='contact-card-form'>
-                                {
-                                    alertContact.open ? <Footer message={alertContact.status} err={alertContact.message} /> : ''
-                                }
-                                <form action=''>
+                                <form action='' onSubmit={handleAlert}>
                                     <div className="mb-2">
                                         <label htmlFor="name" className="form-label">Nama</label>
-                                        <input type="text" className="form-control" id="name" aria-describedby="name" name='nama' onChange={e => setData({ nama: e.target.value })} />
+                                        <input type="text" className="form-control" id="name" aria-describedby="name" name='nama' onChange={evt => setNama(evt.target.value)} />
                                     </div>
                                     <div className="mb-2">
                                         <label htmlFor="email" className="form-label">Email</label>
-                                        <input type="email" name='email' className="form-control" id="email" aria-describedby="email" onChange={e => setData({ email: e.target.value })} />
+                                        <input type="email" name='email' className="form-control" id="email" aria-describedby="email" onChange={evt => setEmail(evt.target.value)} />
                                     </div>
                                     <div className="mb-2">
                                         <label htmlFor="message" className="form-label">Pesan</label>
-                                        <textarea className="form-control" id="message" name='pesan' rows="3" onChange={e => setData({ pesan: e.target.value })}></textarea>
+                                        <textarea className="form-control" id="message" name='pesan' rows="3" onChange={evt => setPesan(evt.target.value)}></textarea>
                                     </div>
-                                    <button className='btn btn-send' onClick={handleAlert}>Kirim</button>
+                                    {
+                                        loading ? <button className='btn btn-send' disabled>Sedang Dikirim ....</button> : <button className='btn btn-send'>Kirim</button>
+                                    }
                                 </form >
                             </div >
                         </div >
