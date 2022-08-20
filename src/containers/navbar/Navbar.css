@@ -1,0 +1,122 @@
+.navbar {
+        background: url("../../assets/Materials/bg.jpg");
+        height: 60px;
+        width: 100%;
+}
+
+.navbar-container {
+        width: 80%;
+        margin: auto;
+        height: 100%;
+}
+
+.navbar-parent {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid white; */
+}
+
+.navbar-title h1 {
+        color: var(--white);
+        font-size: 28px;
+        font-family: "Poppins Bold";
+}
+
+.parent-navbar-list {
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        /* border: 1px solid white; */
+}
+
+.navbar-list-box {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* border: 1px solid white; */
+}
+
+.navbar-list-box-mobile {
+        top: 60px;
+        right: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url("../../assets/Materials/bg.jpg");
+        position: fixed;
+        animation: animated 1.5s alternate ease;
+}
+
+@keyframes animated {
+        from {
+                transform: translateX(500px);
+        }
+        to {
+                transform: translateX(0);
+        }
+}
+
+.navbar-list {
+        list-style: none;
+}
+
+.navbar-list-link,
+.navbar-list-link-mobile {
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Poppins Regular";
+}
+
+.navbar-list-mobile {
+        margin-top: 30px;
+        list-style: none;
+}
+
+.mobile-nav {
+        display: none;
+}
+
+.mobile-nav .nav-icon i {
+        color: var(--white);
+        font-size: 28px;
+}
+
+.navbar-list-link:hover {
+        color: var(--dark-orange);
+}
+
+.highlighted-text {
+        color: var(--dark-orange);
+}
+
+@media screen and (max-width: 1170px) {
+        .navbar-title h1 {
+                font-size: 24px;
+        }
+}
+
+@media screen and (max-width: 1170px) {
+        .navbar-title h1 {
+                font-size: 22px;
+        }
+}
+
+@media screen and (max-width: 925px) {
+        .navbar-list-box {
+                justify-content: flex-end;
+        }
+        .navbar-list {
+                display: none;
+        }
+        .mobile-nav {
+                display: block;
+        }
+        .navbar-parent {
+                display: flex;
+                justify-content: space-between;
+        }
+}

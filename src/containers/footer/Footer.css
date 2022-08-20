@@ -1,0 +1,25 @@
+.alert {
+        animation: alert 1.5s alternate ease;
+        position: fixed;
+        top: 60px;
+}
+
+@keyframes alert {
+        from {
+                transform: translateX(400px);
+        }
+        to {
+                transform: translateX(300px);
+        }
+}
+
+@media screen and (max-width: 386px) {
+        @keyframes alert {
+                from {
+                        transform: translateX(180px);
+                }
+                to {
+                        transform: translateX(0);
+                }
+        }
+}
