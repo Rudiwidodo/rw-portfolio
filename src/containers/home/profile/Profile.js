@@ -47,7 +47,7 @@ export default function Profile() {
                                 Hubungi
                             </button>
                         </a>
-                        <a href="CV.pdf" download={'rudi-widodo-cv.pdf'}>
+                        <a href="new-cv-2023.pdf" download={'rudi-widodo-cv.pdf'}>
                             <button className='btn highlighted-btn'>
                                 Download CV
                             </button>
