@@ -1,106 +1,96 @@
 {
-    "resume" : [
+  "resume": [
+    {
+      "title": "Pendidikan",
+      "detail": [
         {
-            "title" : "Pendidikan",
-            "detail" : [
-                {
-                    "id" : 1,
-                    "nama" : "SD N 01 PLOSO",
-                    "kota" : "KARANGANYAR",
-                    "tahun" : "2004 - 2010"
-                },
-                {
-                    "id" : 2,
-                    "nama" : "SD N 01 PLOSO",
-                    "kota" : "KARANGANYAR",
-                    "tahun" : "2010 - 2013"
-                },
-                {
-                    "id" : 3,
-                    "nama" : "SMK N JATIPURO",
-                    "kota" : "KARANGANYAR",
-                    "tahun" :"2013 - 2016"
-                },
-                {
-                    "id" : 4,
-                    "nama" : "UNIV. INDRAPRASTA PGRI",
-                    "kota" : "JAKARTA",
-                    "tahun" : "2018 - "
-                }
-            ]
+          "id": 1,
+          "nama": "SD N 01 PLOSO",
+          "kota": "KARANGANYAR",
+          "tahun": "2004 - 2010"
         },
         {
-            "title" : "Pekerjaan",
-            "detail" : [
-                {
-                    "id" : 1,
-                    "nama" : "PO. Purwo Widodo Mulyo",
-                    "jabatan" : "Mekanik",
-                    "tahun" : "2015"
-                },
-                {
-                    "id" : 2,
-                    "nama" : "PT. Richeese Kuliner Indonesia",
-                    "jabatan" : "Crew",
-                    "tahun" : "2017"
-                },
-                {
-                    "id" : 3,
-                    "nama" : "Menara Bidakara 2",
-                    "jabatan" : "Part Time",
-                    "tahun" : "2018"
-                }
-            ]
+          "id": 2,
+          "nama": "SD N 01 PLOSO",
+          "kota": "KARANGANYAR",
+          "tahun": "2010 - 2013"
         },
         {
-            "title" : "Bahasa Pemrograman",
-            "detail" : [
-                {
-                    "id" : 1,
-                    "nama" : "html"
-                },
-                {
-                    "id" : 2,
-                    "nama" : "css"
-                },
-                {
-                    "id" : 3,
-                    "nama" : "javascript"
-                },
-                {
-                    "id" : 4,
-                    "nama" : "php"
-                },
-                {
-                    "id" : 5,
-                    "nama" : "react js"
-                },
-                {
-                    "id" : 6,
-                    "nama" : "node js"
-                }
-            ]
+          "id": 3,
+          "nama": "SMK N JATIPURO",
+          "kota": "KARANGANYAR",
+          "tahun": "2013 - 2016"
         },
         {
-            "title" : "Hobi",
-            "detail" : [
-                {
-                    "id" : 1,
-                    "nama" : "Musik"
-                },
-                {
-                    "id" : 2,
-                    "nama" : "Coding"
-                },
-                {
-                    "id" : 3,
-                    "nama" : "Mancing"
-                },
-                {
-                    "id" : 4,
-                    "nama" : "Bulu Tangkis"
-                }
-            ]
+          "id": 4,
+          "nama": "UNIV. INDRAPRASTA PGRI",
+          "kota": "JAKARTA",
+          "tahun": "2018 - 2023"
         }
-    ]
+      ]
+    },
+    {
+      "title": "Pekerjaan",
+      "detail": [
+        {
+          "id": 1,
+          "nama": "PT. Richeese Kuliner Indonesia",
+          "jabatan": "Crew",
+          "tahun": "2017"
+        },
+        {
+          "id": 2,
+          "nama": "Menara Bidakara 2",
+          "jabatan": "Part Time",
+          "tahun": "2018"
+        }
+      ]
+    },
+    {
+      "title": "Bahasa Pemrograman",
+      "detail": [
+        {
+          "id": 1,
+          "nama": "html"
+        },
+        {
+          "id": 2,
+          "nama": "css"
+        },
+        {
+          "id": 3,
+          "nama": "javascript"
+        },
+        {
+          "id": 4,
+          "nama": "bootstrap/tailwindcss"
+        },
+        {
+          "id": 5,
+          "nama": "react"
+        }
+      ]
+    },
+    {
+      "title": "Hobi",
+      "detail": [
+        {
+          "id": 1,
+          "nama": "Musik"
+        },
+        {
+          "id": 2,
+          "nama": "Coding"
+        },
+        {
+          "id": 3,
+          "nama": "Mancing"
+        },
+        {
+          "id": 4,
+          "nama": "Bulu Tangkis"
+        }
+      ]
+    }
+  ]
 }
